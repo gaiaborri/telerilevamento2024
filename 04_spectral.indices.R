@@ -154,3 +154,73 @@ plot(ndvi2006, col=clvir)
 # speediing up calculation
 ndvi2006a <- im.ndvi(m2006, 1, 2)
 plot(ndvi2006a, col=cl)
+
+
+04/04/2024
+#calculating th DVI (Difference Vegetation Index)
+#prendo ogni pixel di ogni singola banda e faccio la sottrazione con i pixel della banda del rosso (nr-r)=DVI
+#il range di questa immagien è 8 bit (256 valori possibili) 
+#se nr ha il valore massimo e il red ha il valore minimo (0) avrò un indice pari a 255, viceversa avrò -255
+#l'indice infatti varia da -255 a + 255, quindi è funzione della radiazione radiometrica all'entrata
+#Calcolo ndvi per m1992
+dvi1002= m1992[[1]]-m1992[[2]]
+#oppure posso scrivere i nomi delle bande, ma è tempo perso
+plot(dvi1992)
+cl <- colorRampPalette(c("darkblue", "yellow", "red", "black")) (100)
+plot(dvi1992, col=cl)
+#facciamo la stessa operazione con quello del 2006 
+m2006<-im.import("matogrosso_ast_2006209_lrg.jpg")
+dvi2006=m2006[[1]]-m2006[[2]]
+plot(dvi2006,col=cl)
+
+#Exercise: plot the dvi1992 beside the dvi2006
+par(mfrow=c(1,2))
+plot(ndvi1992,col=cl)
+plot(ndvi2006,col=cl)
+#ottengo la differenza visiva tra la vegetazione del 1992 e il 2006 
+
+#se avessi un immagine a 4 bit (ho 16 valori possibili), quinid il valore varia da -15 a +15
+#ho il nir che varia da 0 a 15 e anche il red
+#ovviamente  non posso comparare due immagini, una con 4 bit e una con 8 bit
+#Normalizziamo 
+#se faccio nir-red posso dividere per la loro somma--> (nir-red/nir+red)
+
+#a 8 bit avrò:
+#se il nir è massimo: 255-0/255+0= 1
+#se ho il minimo nir e il massimo red: 0-255/0+255= -1
+
+#a 4 bit avrò: 
+#15-0/15+0= 1 (max dvi)
+#0-15/0+15= -1 (min dvi)
+#quindi in entrambi i casi l'indice NDVI varia da -1 a 1
+
+#Normalized Difference Vegetation Index
+ndvi1992= dvi1992/(m1992[[1]]+m1992[[2]])
+ndvi2006= dvi2006/(m2006[[1]]+m2006[[2]])
+
+#possibili domande esame:
+#quale potrebbe essere un problema per le elgende usate? perchè hai usato l'ndvi invece del dvi?
+
+par(mfrow=c(1,2))
+plot(ndvi1992, col=cl)
+plot(ndvi2006,col=cl)
+#ottengo un plot con entrmabe le immagini NDVI 1992 e 2006
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
