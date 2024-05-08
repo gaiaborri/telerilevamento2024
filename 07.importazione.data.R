@@ -8,7 +8,7 @@ library(imageRy)
 #uso funzione setworkingdirectory setwd per definire dove si trova nostra immagine
 #inizialmente c'è la lettera C maiuscola con il backslash ma a R non piace
 #quindi devo cambiare la direzione degli slash
-setwd("C:/Users/Mattia/Downloads/immagini lezioni R")
+setwd("C:/Users/Utente/Desktop/uni/TELERILEVAMENTO")
 
 #poi uso una funzione che crea dei raster spaziali
 rast("eclissi.png")
@@ -23,9 +23,8 @@ im.plotRGB(eclissi, 3, 1, 2)
 dif = ecissi[[1]] - eclissi[[2]]
 plot(dif)
 
-
-#import another image 
-desertification <- rast(""C:/Users/Mattia/Downloads/immagini lezioni R/sahel_desertification.jpg")
+#import another image (sahel_desertification)
+desertification <- rast("C:/Users/Utente/Desktop/uni/TELERILEVAMENTO/sahel_desertification2.jpg")
 
 im.plotRGB(desertification, 1, 2, 3)
 im.plotRGB(desertification, 2, 1, 3)
