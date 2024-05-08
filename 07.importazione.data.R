@@ -32,6 +32,17 @@ im.plotRGB(desertification, 2, 1, 3)
 im.plotRGB(desertification, 3, 1, 2)
 
 # importing Copernicus data
+#Progetto Copernicus: programma europeo di osservazione della terra che ha come obiettivo il monitoraggio del pianeta
+#e dell'ambiente tramite satelliti che orbitano intorno alla terra.
+#i satelliti del progetto sono Sentinel 1 che registra informazioni radar
+#il sentinel 2 acquisisce immagini che vengono rielaborate e danno informazioni su ciò che c'è a terra
+#su copernicus browser posso fare la selezione di ciò che mi interessa scaricare.
+#tramite la scelta della data posso visualizzare una determinata zona in periodi diversi dell'anno
+#così da poter fare analisi qualitative di quello che è cambiato a livello ambientale (es. livello dei ghiacciai)
+#la sezione layer riguarda le informazioni che posso vedere e scaricare, quindi il "true color (RGB)",
+#il falso colore, l'NDVI, ecc.
+#per selezionare la zona di interesse posso farlo sia a mano con la matita in alto a dx, oppure con la selezione rettangolare
+#per il download nel pannello analytical posso scaricare la georeferenziazione del dato dell'immagine
 soil <- rast("C:/Users/Mattia/Downloads/immagini lezioni R/c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc")
 plot(soil)
 
