@@ -4,6 +4,10 @@ library(imageRy)
 library(terra)
 # install.packages("viridis")
 library(viridis)
+#Con le scale di colore in questo pacchetto si possono creare grafici per poter rappresentare meglio i dati, 
+#sono più facili da leggere per chi soffre di daltonismo e per stampare bene in scala di grigi.
+#le persone malate non vedranno i colori esatti ma almeno discrimineranno tra km minimo e massimo
+#anche cividis è una buona tavolozza inclusiva
 
 im.list()
 
@@ -20,7 +24,7 @@ im.plotRGB(sent, r=2, g=1, b=3)
 #La prima banda NIR dell'immagine viene assegnata alla variabile nir
 nir <- sent[[1]]
 
-#Viene creata una paletta di colori che va dal rosso all'arancione al giallo
+#Viene creata una palette di colori che va dal rosso all'arancione al giallo
 #composta da 100 gradazioni di colore.
 cl <- colorRampPalette(c("red","orange","yellow"))(100)
 plot(nir, col=cl)
