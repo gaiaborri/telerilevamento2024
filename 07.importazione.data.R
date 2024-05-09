@@ -42,7 +42,7 @@ im.plotRGB(desertification, 3, 1, 2)
 #il falso colore, l'NDVI, ecc.
 #per selezionare la zona di interesse posso farlo sia a mano con la matita in alto a dx, oppure con la selezione rettangolare
 #per il download nel pannello analytical posso scaricare la georeferenziazione del dato dell'immagine
-soil <- rast("C:/Users/Mattia/Downloads/immagini lezioni R/c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc")
+soil <- rast("C:/Users/Utente/Desktop/uni/TELERILEVAMENTO/c_gls_SSM1km_202404210000_CEURO_S1CSAR_V1.2.1.nc")
 plot(soil)
 
 # la funzione crop per ritagliare ciò che mi interessa attraverso le coordinate del grafico
