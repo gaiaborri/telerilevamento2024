@@ -16,20 +16,23 @@ EN13<- im.import(""EN_13.png"")
 #In EN01 notiamo che la parte in italia è molto scandalosa con quella macchia rossa,
 #si notano anche le città principali come Roma, Napoli
 #il nostro problema è l'emissione da parte dell'agricoltura
-#in EN13 situazione a marzo del 2020 e la situazione è decisamente migliore
+#EN13 rappresenta la situazione a marzo del 2020 e la situazione è decisamente migliore
 #questo per via del Covid, che non ci permetteva grandi spostamenti 
 #facciamo un par per metterli vicini
 
 par(mfrow=c(2,1)) #così ottengo il plot con le due immagini una sopra e una sotto, non vicine
+#2 righe; 1 colonne
+
 im.plotRGB.auto(EN01)
 im.plotRGB.auto(EN13)
 #otteniamo un plot con entrambe le immagini
 
 #confronto tra livelli 
-difEN = EN01[[1]] - EN13[[1]]
+difEN = EN01[[1]] - EN13[[1]] #[[1]] significa prima banda
 cl <- colorRampPalette(c("blue", "white","red")) (100)
 #ho preso i pixel del primo livello di EN01 e ci sottraggo i pixel del primo livello di EN13 
 #mi dirà quali punti hanno avuto un cambiamento più sentito
+#il red è l'utimo perchè nella rappresentazione grafica è il valore più alto
 
 cl
 difEN
@@ -40,7 +43,7 @@ plot(difEN, col=cl)
 #possiamo quantificare il cambiamento
 #non abbiamo fatto una classificazione ma abbiamo mantenuto valori continui  
 
-#Scioglimento dei ghiacciai in Groenlandia 
+##NUOVO ESEMPIO## Scioglimento dei ghiacciai in Groenlandia 
 
 #il proxy è un variabile più facile da misurare
 #il programma Copernicus ha 4 aree di studio, e nell'energia c'è il "Land Surface Temperature"
@@ -73,6 +76,8 @@ plot(g2010,col=clg)
 plot(g2015,col=clg)
 
 #al posto della funzione "par" posso usare la funzione "stack"
+stackg <- c(g2000, g2005, g2010, g2015)
+plot(stackg,col=clg)
 greenland <- c(g2000, g2005, g2010, g2015)
 plot(greenland, col=clg)
 
@@ -83,7 +88,8 @@ dev.off()
 difg= greenland[[1]] - greenland[[4]]
 plot(difg, col=cl)
 
-#la zona blu sta a significare l'aumento di temperatura 
+#la zona blu sta a significare l'aumento di temperatura
+#le zone rosso quelle con minor differenza di temperatura 
 
 #ammettiamo di prendere 3 livelli di un RGB, quindi R,G, e B
 #per ognuno ci metto un anno
