@@ -1,4 +1,5 @@
 #Classificare la copertura forestale. 
+
 #selezioniamo pixel casuali 
 #siti di prova 
 #i gruppi di oggetti si chiamano cluster, ovvero un insieme di pixel presi in modo casuale
@@ -59,7 +60,7 @@ plot(m1992c)
 #calcolo del numero di pixel per ogni cluster con la FREQUENZA
 
 #Calculating Frequency
-#per frequenza si intende quanto un parametro viene ripetuto in un insieme (es. quanti maschi ci sono in classe? F=10)
+#per frequenza si intende quanto un parametro viene ripetuto in un insieme (es. quanti maschi ci sono in classe?)
 
 #1992
 
