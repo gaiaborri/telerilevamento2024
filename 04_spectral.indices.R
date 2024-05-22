@@ -21,7 +21,7 @@ im.plotRGB(m1992, 1, 2, 3)
 im.plotRGB(m1992, 2, 1, 3)
 
 # nir ontop of the B component
-im.plotRGB(m1992, 2, 3, 1)
+im.plotRGB(m1992, 2, 3, 1) #per far vedere il suolo nudo giallo
 
 # importing the 2006 image
 m2006 <- im.import("matogrosso_ast_2006209_lrg.jpg")
@@ -125,6 +125,8 @@ im.plotRGB(m2006, r=2, g=3, b=1)
 dvi1992 = m1992[[1]] - m1992[[2]]
 plot(dvi1992)
 
+#La funzione colorRampPalette() genera una palette di colori interpolati.
+#usata per creare una gamma di colori graduale
 cl <- colorRampPalette(c("darkblue", "yellow", "red", "black")) (100)
 plot(dvi1992, col=cl)
 
@@ -163,6 +165,8 @@ plot(ndvi2006a, col=cl)
 #se nr ha il valore massimo e il red ha il valore minimo (0) avrò un indice pari a 255, viceversa avrò -255
 #l'indice infatti varia da -255 a + 255, quindi è funzione della radiazione radiometrica all'entrata
 #Calcolo ndvi per m1992
+#DVI = NIR - RED
+
 dvi1002= m1992[[1]]-m1992[[2]]
 #oppure posso scrivere i nomi delle bande, ma è tempo perso
 plot(dvi1992)
@@ -197,9 +201,6 @@ plot(ndvi2006,col=cl)
 #Normalized Difference Vegetation Index
 ndvi1992= dvi1992/(m1992[[1]]+m1992[[2]])
 ndvi2006= dvi2006/(m2006[[1]]+m2006[[2]])
-
-#possibili domande esame:
-#quale potrebbe essere un problema per le elgende usate? perchè hai usato l'ndvi invece del dvi?
 
 par(mfrow=c(1,2))
 plot(ndvi1992, col=cl)
