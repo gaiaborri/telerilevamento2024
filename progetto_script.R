@@ -142,7 +142,7 @@ urban_m <- (b11_m-b3_m)/(b11_m+b3_m)                                            
 plot(urban_m, col= urban_color, main = "URBAN MAGGIO Porto Alegre")             #per la visualizzaizone ho utilizzato una palette di colori spceifica, così da rendere l'immagine più intuitiva, assegnando anche un titolo
 
                                              
-#CALCOLO Deviazione Standard MNDWI#                                             #calcolo la SD su diverse finestre spaziali così da evidenziare la variabilità delle bande spettrali di un'immagine
+#CALCOLO Deviazione Standard MNDWI#
 
 p_ndwi_m <- plot(mndwi_m, col= mndwi_color, main = "MNDWI MAGGIO Porto Alegre")
 sd13_mndwi_m <- focal(mndwi_m, w = matrix(1/169, 13, 13), fun = sd)             #calcolo SD su una finestra 13x13
@@ -206,7 +206,7 @@ p_mndwi_g <- plot(mndwi_g, col= mndwi_color, main= "MNDWI GIUGNO Porto Alegre" )
 urban_g <- (b11_g-b3_g)/(b11_g+b3_g)                                            #carico la banda 11(SWIR) e la banda 3 (Green)
 plot(urban_g, col= urban_color, main = "URBAN GIUGNO Porto Alegre")             #per la visualizzaizone ho utilizzato una palette di colori spceifica, così da rendere l'immagine più intuitiva, assegnando anche un titolo
 
-#CALCOLO deviazione standard MNDWI#                                             #calcolo la SD su diverse finestre spaziali così da evidenziare la variabilità delle bande spettrali di un'immagine
+#CALCOLO deviazione standard MNDWI#
 
 p_mndwi_g <- plot(mndwi_g, col= mndwi_color, main = "MNDWI GIUGNO Porto Alegre")
 sd13_mndwi_g <- focal(mndwi_g, w = matrix(1/169, 13, 13), fun = sd)             #calcolo SD su una finestra 13x13
@@ -270,7 +270,7 @@ urban_ag <- (b11_ag-b3_ag)/(b11_ag+b3_ag)                                       
 plot(urban_ag, col= urban_color, main = "URBAN AGOSTO Porto Alegre")            #per la visualizzaizone ho utilizzato una palette di colori spceifica, così da rendere l'immagine più intuitiva, assegnando anche un titolo
 
 
-#CALCOLO deviazione standard MNDWI#                                             #calcolo la SD su diverse finestre spaziali così da evidenziare la variabilità delle bande spettrali di un'immagine
+#CALCOLO deviazione standard MNDWI#                               
 
 p_mndwi_ag <- plot(mndwi_ag, col= mndwi_color, main = "MNDWI AGOSTO Porto Alegre")
 sd13_mndwi_ag <- focal(mndwi_ag, w = matrix(1/169, 13, 13), fun = sd)           #calcolo SD su una finestra 13x13
