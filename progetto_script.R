@@ -146,7 +146,7 @@ plot(urban_m, col= urban_color, main = "URBAN MAGGIO Porto Alegre")             
 
 p_ndwi_m <- plot(mndwi_m, col= mndwi_color, main = "MNDWI MAGGIO Porto Alegre")
 sd13_mndwi_m <- focal(mndwi_m, w = matrix(1/169, 13, 13), fun = sd)             #calcolo SD su una finestra 13x13
-sd13_mndwi_m                                                                    #quello che otteniamo sono due valori: un valore minimo del raster: 2.6098e-18, e un valore massimo: 4.6676e-03.Il valore minimo corrisponde ad aree omogenee, dove i valori del MDNWI sono quasi costanti o costanti,mentre il valore più alto indica aree con maggiore variabilità spaziale all'interno della finestra, corrispondendo quindi alle zone di transizione tra acqua e terra e alle zone sommerse
+sd13_mndwi_m                                                                    #quello che otteniamo sono due valori: un valore minimo del raster: 2.6098e-18, e un valore massimo: 4.6676e-03.Il valore minimo molto vicino allo zero ci indica aree completamente sommerse.
 
 
 #visualizzo il grafico utilizzando la palette di colori "viridis" per rappresentare meglio i dati
