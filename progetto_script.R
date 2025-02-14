@@ -289,8 +289,7 @@ p_tc_m <- plotRGB(t_color_m, 1, 2 ,3, main= "Maggio Porto Alegre")
 p_tc_g <- plotRGB(t_color_g, 1, 2 ,3, main= "Giugno Porto Alegre")
 p_tc_ag <- plotRGB(t_color_ag, 1, 2 ,3, main= "Agosto Porto Alegre")
 
-##CONFRONTI INDICI NDVI, MNDWI e UI TRA I PERIODI IN ESAME##
-
+##CONFRONTI INDICI NDVI, NDWI, MNDWI e UI TRA I PERIODI IN ESAME##
 
 #CONFRONTO NDVI MAGGIO - AGOSTO#                                              
 
@@ -310,6 +309,16 @@ plot(ndvi_a, col= ndvi_color, main = "NDVI APRILE Porto Alegre")
 plot(ndvi_ag, col= ndvi_color, main = "NDVI AGOSTO Porto Alegre")
 #questa è la situazione della vegatazione pre e post alluvione. 
 #nel periodo di Agosoto la situazione si è ripristinata quasi totalmente, eccetto per le zone in prossimità dei corsi dei fiumi e del Lago Guaìba dove infatti, l'indice evidenzia un minor densità della vegetaizone, probabilmente in via di recupero. 
+
+#CONFRONTO NDWI#
+par(mfrow= c(2,2))
+plot(ndwi_a, col= ndwi_color, main = "NDWI APRILE Porto Alegre") 
+plot(ndwi_m, col= ndwi_color, main = "NDWI MAGGIO Porto Alegre") 
+plot(ndwi_g, col= ndwi_color, main = "NDWI GIUGNO Porto Alegre")
+plot(ndwi_ag, col= ndwi_color, main = "NDWI AGOSTO Porto Alegre")
+#indice influenzato dalla presenza di sostanza organica disciolta e dai sedimenti in sospensione 
+
+dev.off()
 
 #CONFRONTO MNDWI APRILE - MAGGIO#
 
